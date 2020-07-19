@@ -15,7 +15,7 @@
    yarn add prop-types
    ```
 
-3) yarn 실행
+3. yarn 실행
 
    ```javascript
    yarn start
@@ -47,13 +47,15 @@ hashRouter를 사용한 router 만들기
 import { HashRouter as Router, Route } from "react-router-dom";
 ```
 
-src/Components
+**필요한 page**
+
+​ src/Components
 
 ​ -App.js
 
 ​ -Routes.js
 
-src/Routes
+​ src/Routes
 
 ​ -Detail.js
 
@@ -66,3 +68,31 @@ src/Routes
 \*\* Router는 오직 하나의 child만 가질 수 있다.
 
 따라서 fragment를 사용한다. (<></>)
+
+**BrowserRouter를 사용한 router 만들기**
+
+```javascript
+import { BrowserRouter as Router, Route } from "react-router-dom";
+```
+
+**Redirect Router**
+
+```javascript
+<Redirect from="*" to="/" /> {/* 일치하는 route가 하나도 없다면 /로 보낸다. */}
+```
+
+**Switch**
+
+​ -한 번에 오직 하나의 Route만 Render하게 해준다.
+
+​ 사용법
+
+​ `<Router></Router>`를 `<Switch></Switch>`로 감싸준다.
+
+**exact의 활용**
+
+```javascript
+<Route path="/tv" exact component={TV} /> {/* 정확하게 /tv로 들어올 경우 */}
+
+<Route path="/search" component={Search} /> {/* /search가 포함된 url의 경우 ex) /search/ex1, /search 둘 다 Search page를 호출함 */}
+```
