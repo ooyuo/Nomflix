@@ -96,3 +96,65 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 <Route path="/search" component={Search} /> {/* /search가 포함된 url의 경우 ex) /search/ex1, /search 둘 다 Search page를 호출함 */}
 ```
+
+_\### STYLES_
+
+**Styled Components**
+
+​ 1. 설치 / import
+
+```javascript
+yarn add styled-components
+
+import styled from "styled-components";
+```
+
+​ 2. 컴포넌트 만들기
+
+```javascript
+const List = styled.ul`
+  display: flex;
+  &:hover {
+    background-color: blue;
+  }
+`;
+{
+  /* 백틱 안에 style을 지정할 수 있다. */
+}
+```
+
+​ 3. 사용하기
+
+```javascript
+export default () => {
+  <List></List>;
+};
+```
+
+**Link 삽입하기**
+
+- React Router에서 주어진다.
+- 해당 page가 내 어플리케이션에 있으면 javascript 방식으로 가게 해준다.
+
+​ 1. import
+
+```javascript
+import { Link } from "react-router-dom";
+```
+
+​ 2. 컴포넌트 만들기
+
+```javascript
+const myLink = styled(Link)``;
+{
+  /* 백틱 안에 style을 지정할 수 있다. */
+}
+```
+
+​ 3. 사용하기
+
+```javascript
+export default () => {
+  <myLink to="/">링크</myLink>;
+};
+```
