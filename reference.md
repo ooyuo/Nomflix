@@ -158,3 +158,29 @@ export default () => {
   <myLink to="/">링크</myLink>;
 };
 ```
+
+---
+
+**Global Styles**
+
+SC(Styled Components)를 이용해서 css를 초기화하고 0의 상태에서 시작하게 한다.
+
+styled-reset 설치 / import
+
+```javascript
+yarn add styled-reset
+
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
+{/* styled-components와 styled-reset을 import한다. */}
+```
+
+사용하기
+
+```javascript
+export default () = createGlobalStyle`
+	${reset};
+	...
+	...
+`;
+```
