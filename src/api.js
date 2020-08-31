@@ -13,6 +13,14 @@ const api = axios.create({
   },
 });
 
-api.get("tv/popular"); // "/"로 시작하는 것은 절대경로를 의미한다. /tv/.. 로 작성하면 baseURL을 덮어쓰게된다. 반드시 상대경로를 쓸 것.
+export const movieApi = {
+  nowPlaying: () => api.get("movie/now_playing"),
+  upcoming: () => api.get("movie/upcoming"),
+  popular: () => api.get("movie/popular"),
+};
 
-export default api;
+export const tvApi = {
+  topRated: () => api.get("tv/top_rated"),
+  popular: () => api.get("tv/popular"),
+  airingToday: () => api.get("tv/airing_today"),
+};
